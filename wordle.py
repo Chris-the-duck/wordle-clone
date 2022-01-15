@@ -1,10 +1,14 @@
 import requests, json, random
-
+from key import app_key
 # Oxford dictionary API info
 
 app_id = "01c7385d"
-app_key = "7a4831c2f38ea989b124122b31993b3b"
 language = "en-us"
+'''
+ I have deleted the key that was contained here in previous
+versions of this file as the error of uploading my app key
+to GitHub occurred to me
+'''
 
 # Getting 5 letter words from a list I happen to have
 
