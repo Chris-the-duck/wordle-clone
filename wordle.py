@@ -69,14 +69,19 @@ def check_guess(word, guess):
     if word == guess:
         print("OMG YOU WIN")
         return
+    word_arr = []
+    guess_arr = []
     string = ""
+    for letter in word:
+        word_arr.append(letter)
     for i in range(len(guess)):
-        if guess[i] not in word:
-            guessed_wrong.append(guess[i])
-            string += red + guess[i].upper()
-        elif guess[i] == word[i]:
+        if guess[i] == word[i]:
             guessed_right.append(guess[i])
             string += green + guess[i].upper()
+            word_arr.remove(guess[i])
+        elif guess[i] not in word_arr:
+            guessed_wrong.append(guess[i])
+            string += red + guess[i].upper()
         else:
             guessed_halfright.append(guess[i])
             string += yellow + guess[i].upper()
@@ -88,6 +93,7 @@ def check_guess(word, guess):
 print("***WELCOME TO CHRISTINA'S WORDLE RIPOFF IN PYTHON***\n\n")
 #username = input("What is your name?\n")
 # put option to play game vs view stats here
-word = find_word()
+#word = find_word()
+word = "banal"
 guess = take_guess()
 check_guess(word, guess)
